@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+
+    <div class="main-box">
+        <div class="question-box">
+
+        </div>
+        
+        <div class="question-buttons">
+            <button class="button">Sim</button>
+            <button class="button">Não</button>
+            <button class="button">Não sei</button>
+        </div>
+    </div>
+
+    <div class="display">
+
+        <div class="logo-box">
+            <img  class="text-top" src="../static/assets/pokelogo.png" alt="Pokémon!", width="300px">
+        </div>
+
+        <div class="pokemon-container">
+            <img class="pokemon" src="../static/assets/pikachu.png" alt="Pokémon!", width="200px">
+        </div>
+
+        <div class="footer-box">
+            <p class="text-bottom"> Projeto feito para a disciplina <br>de Projeto e Análise de Algoritmos.<br><br> github.com/EmanuelFirmino/Pokemon_PAA</p>
+        </div>
+
+    </div>
+
+{% endblock %}
