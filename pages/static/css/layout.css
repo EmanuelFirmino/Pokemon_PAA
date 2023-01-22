@@ -21,34 +21,37 @@ body {
 .top-nav {
     width: 100%;
     position: fixed;
-    height: 8%;
+    height: 7%;
     display: flex;
     padding-left: 1%;
-    background-image: radial-gradient(red, darkred);
+    background-image: radial-gradient(var(--primary-color),darkred);
     align-items: center;
     justify-content: space-between;
 }
 
 .content-box {
     position: fixed;
-    top: 8%;
+    top: 7%;
     display: flex;
     width: 100%;
-    height: 92%;
+    height: 93%;
 }
 
 .content-box .main-box {
     height: 100%;
     width: 60%;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-image: url('../assets/fundo.jpg');
+    background-size: cover;
+    background-position: bottom;
 }
 
 .content-box .display {
     text-align: center;
     height: 100%;
     padding: 10px;
-    width: 40%;
+    width: 45%;
     background: linear-gradient(to top, #2986cc, var(--secondary-color), #90cbf7);
+    border-left:groove 50px #ff5a4e;
 }
 
 .content-box .display .text-top{
@@ -71,12 +74,13 @@ body {
 }
 
 .content-box .display .footer-box {
-    margin-top: 130px;
+    margin-top: 100px;
 }
 
 .content-box .display .footer-box .text-bottom {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: white;
+    font-weight: 600;
     font-size: 12px;
 }
 
@@ -150,7 +154,7 @@ body {
 @keyframes mostruary {
     from {
         top: 40px;
-        
+                
     }
 
     to {

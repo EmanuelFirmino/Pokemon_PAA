@@ -63,4 +63,4 @@ def createDB():
         cursor.execute('INSERT INTO pokemon VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', values)
         db.commit()
 
-        print(f'#Pokemon {pokemon_index} adicionado ao bando de dados!')
+        print(f'#Pokemon {pokemon_index} adicionado ao banco de dados!')
