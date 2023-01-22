@@ -1,1 +1,0 @@
-API_ADDRESS = 'https://pokeapi.co/api/v2/pokemon'
