@@ -1,14 +1,13 @@
 # Pokémon - Projeto PAA
----------------
+
 Aplicação Web produzida para a disciplina Projeto e Análise de Algoritmos da Universidade de Brasília (UnB).
 
 # Tecnologias
-----------------
 
 * Python Flask
 
 # Instruções para execução
----------------
+
 
 1. Fazer download das dependências:
    * `pip install -r requirements.txt`
