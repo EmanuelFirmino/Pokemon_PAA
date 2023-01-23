@@ -52,6 +52,7 @@ body {
     width: 40%;
     background: linear-gradient(to top, #2986cc, var(--secondary-color), #90cbf7);
     border-left:groove 30px #ff5a4e;
+    display: grid;  
 }
 
 .content-box .display .text-top{
@@ -63,7 +64,7 @@ body {
 
 .content-box .display .pokemon-container {
     position: relative;
-    top: 30%;
+    top: 42%;
     left: 50%;
     transform: translate(-50%, -50%);
     height: 300px;
@@ -74,7 +75,8 @@ body {
 }
 
 .content-box .display .footer-box {
-    margin-top: 100px;
+    position: relative;
+    top: 20%;
 }
 
 .content-box .display .footer-box .text-bottom {
