@@ -49,9 +49,9 @@ body {
     text-align: center;
     height: 100%;
     padding: 10px;
-    width: 45%;
+    width: 40%;
     background: linear-gradient(to top, #2986cc, var(--secondary-color), #90cbf7);
-    border-left:groove 50px #ff5a4e;
+    border-left:groove 30px #ff5a4e;
 }
 
 .content-box .display .text-top{
