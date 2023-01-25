@@ -96,6 +96,27 @@ body {
     transform: translate(-50%, -50%);
 }
 
+.main-box .question-box .letter .question {
+    position: relative;
+    top: 20%;
+    font-family: 'Rampart One';
+    font-size: 2vw;
+    color: blue;
+}
+
+.main-box .question-box .letter {
+    position: relative;
+    width:auto;
+    height:auto;
+    padding: 10px;
+    background-color: rgba(255,255,255,0.6);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+}
+
+
 .main-box .question-buttons .button {
     margin: 5px;
     padding: 8px;
@@ -149,7 +170,9 @@ body {
     background-image: url('../assets/background-florest.png');
     background-size: cover;
     background-position: center;
-
+    align-content: center;
+    text-align: center;
+    padding: 20px;
 }
 
 

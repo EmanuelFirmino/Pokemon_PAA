@@ -6,14 +6,17 @@
 
     <div class="main-box">
         <div class="question-box">
-
+            <div class="letter">
+                <h3 class="question"> {{ question }} </h3>
+            </div>
         </div>
         
-        <div class="question-buttons">
-            <button class="button">Sim</button>
-            <button class="button">Não</button>
-            <button class="button">Não sei</button>
-        </div>
+        <form class="question-buttons" action="{{ url_for('index') }}" method="POST">
+            <button class="button" name="positive" id="choose">Sim</button>
+            <button class="button" name="negative" id="choose">Não</button>
+            <button class="button" name="otherwise" id="choose">Não sei</button>
+        </form>
+    
     </div>
 
     <div class="display">
@@ -23,13 +26,15 @@
         </div>
 
         <div class="pokemon-container">
-            <img class="pokemon" src="../static/assets/pikachu.png" alt="Pokémon!", width="200px">
+            <img class="pokemon" src="{{ sprite }}" alt="Pokémon!", width="200px">
         </div>
 
-        <div class="footer-box">
+        <footer class="footer-box">
             <p class="text-bottom"> Projeto feito para a disciplina <br>de Projeto e Análise de Algoritmos.<br><br> github.com/EmanuelFirmino/Pokemon_PAA</p>
-        </div>
+        </footer>
 
     </div>
+
+    
 
 {% endblock %}
