@@ -20,7 +20,7 @@ class PAA:
         @self.app.route('/', methods=['GET', 'POST'])
         def index():
 
-            sprite = f'../static/assets/pikachu{randint(1, 5)}.png'
+            sprite = f'../static/assets/g.gif'
             if request.method == 'POST':
                 self.answers[self.curr_question] = request.form.get('positive')!=None
                 self.curr_question+=1
@@ -31,7 +31,7 @@ class PAA:
                 return render_template('index.html', title="Home", question="O pokemon eh o %s"%(binary_tree(self.answers,self.tree)), sprite=sprite)
     def start(self):
 
-        self.app.run(debug=True)
+        self.app.run(debug=False)
 
 App = PAA()
 

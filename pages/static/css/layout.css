@@ -151,9 +151,8 @@ body {
 }
 
 .top-nav #left-side a img:hover {
-    width: 40px;
-    height: 40px;
-    transition: 500ms ease-in;
+    transform: scale(1.5);
+    transition: 400ms ease-in-out;
 }
 
 

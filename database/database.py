@@ -41,7 +41,7 @@ def createDB():
 
     db.commit()
 
-    for pokemon_index in range(1, QNT_POKEMON):
+    for pokemon_index in range(1, QNT_POKEMON+1):
 
         pokemon = getJSON(pokemon_index)
 
