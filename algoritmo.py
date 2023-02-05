@@ -1,63 +1,24 @@
-import numpy as np
-import pandas as pd
-
-from database.database import db
-
 class ALGORITMO:
     
     def __init__(self):
         self.data = None
 
 
-    def run(self, resposta_usuario: int):
+    def run(self, ans: str, db: dict):
 
-        # INPUT
-            # resposta_usuario == 1: 'Sim'
-            # resposta_usuario == -1: 'Não'
-            # resposta_usuario == 0: 'Não sei'
-
-        # OUTPUT
-            # Se encontro o Pokémon: return id do Pokémon, True
-            # Se não: return
-
-        achou = False
-        question = 'Teste'
-
-        data = db()
-        pokemons = data.get_pokemon()
-
-        lista_pokemons = list()
-        for i in range(len(pokemons)):
-            lista_pokemons.append(list(pokemons[i]))
-
-        lista_pokemons = pd.DataFrame(lista_pokemons)
-
-        # print(lista_pokemons.shape)
-        # print(lista_pokemons.describe())
-        pesos = lista_pokemons[2]
-        alturas = lista_pokemons[3]
-        tipes = lista_pokemons[5]
-        abilits = lista_pokemons[7]
-        defense = lista_pokemons[11]
-        # xp = lista_pokemons[4]
-        # print(defense)
-        # print(defense.describe())
-        # print(defense.value_counts(dropna=True))
-
-        lista_perguntas = pd.DataFrame()
-        lista_perguntas['Seu Pokemon é leve?(pesa menos que 300 kg)'] = np.where(
-            lista_pokemons[2] < 300, 1, 0)
-        lista_perguntas['Seu Pokemon é pequeno?(menor que 10 metros)'] = np.where(
-            lista_pokemons[3] < 10, 1, 0)
-        lista_perguntas['Seu Pokemon é do  tipo  água?'] = np.where(
-            lista_pokemons[5] == 'water', 1, 0)
-        lista_perguntas['Seu Pokemon é do  tipo  normal?'] = np.where(
-            lista_pokemons[5] == 'normal', 1, 0)
-        lista_perguntas['Seu Pokemon tem uma defesa fraca?(menor que 70)'] = np.where(
-            lista_pokemons[11] < 70, 1, 0)
-
-        # print(lista_perguntas['Seu Pokemon tem uma defesa fraca?(menor que 70)'].value_counts())
-        contagem = lista_perguntas.value_counts()
-        # lista_perguntas['contador'] = contagem
-        
+        achou = not (db.get(ans, False)==False)
+        question = ''
+        if len(ans)==0:
+            question = 'Seu Pokemon é leve?(pesa menos que 300 kg)'
+        if len(ans)==1:
+            question = 'Seu Pokemon é pequeno?(menor que 10 metros)'
+        if len(ans)==2:
+            question = 'Seu Pokemon é do  tipo  água?'
+        if len(ans)==3:
+            question = 'Seu Pokemon é do  tipo  normal?'
+        if len(ans)==4:
+            question = 'Seu Pokemon tem uma defesa fraca?(menor que 70)'
+        if len(ans)==5:
+            if achou: question = 'Seu Pokemon eh o %s'%(db[ans])
+            else: question = 'Nao achei seu Pokemon'
         return question, achou
