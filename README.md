@@ -1,5 +1,7 @@
 # Pokémon - Projeto PAA
 
+![alt text](https://github.com/EmanuelFirmino/Pokemon_PAA/blob/main/print.png?raw=true)
+
 Aplicação Web produzida para a disciplina Projeto e Análise de Algoritmos da Universidade de Brasília (UnB).
 
 # Tecnologias
