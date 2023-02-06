@@ -4,37 +4,46 @@
 
 {% block content %}
 
-    <div class="main-box">
-        <div class="question-box">
-            <div class="letter">
-                <h3 class="question"> {{ question }} </h3>
-            </div>
-        </div>
-        
-        <form class="question-buttons" action="{{ url_for('index') }}" method="POST">
-            <button class="button" name="positive" id="choose">Sim</button>
-            <button class="button" name="negative" id="choose">Não</button>
-            <button class="button" name="otherwise" id="choose">Não sei</button>
-        </form>
-    
-    </div>
+<div class="main-box">
 
-    <div class="display">
-
-        <div class="logo-box">
-            <img  class="text-top" src="../static/assets/pokelogo.png" alt="Pokémon!", width="300px">
-        </div>
-
+    <div class="logo-mobile">
+        <img class="text-top" src="../static/assets/logo-mobile.png" alt="Pokémon!" , width="150px">
         <div class="pokemon-container">
-            <img id="pokemon" class="pokemon" src="{{ sprite }}" alt="Pokémon!", width="200px">
+            <img id="pokemon" class="pokemon" src="{{ sprite }}" alt="Pokémon!" , width="70px">
         </div>
-
-        <footer class="footer-box">
-            <p class="text-bottom"> Projeto feito para a disciplina <br>de Projeto e Análise de Algoritmos.<br><br> github.com/EmanuelFirmino/Pokemon_PAA</p>
-        </footer>
-
     </div>
 
-    <script type="text/javascript" src="../static/js/change_sprite.js"></script>
+    <div class="question-box">
+        <div class="letter">
+            <h3 class="question"> {{ question }} </h3>
+        </div>
+    </div>
+
+    <form class="question-buttons" action="{{ url_for('index') }}" method="POST">
+        <button class="button" name="positive" id="choose">Sim</button>
+        <button class="button" name="negative" id="choose">Não</button>
+        <button class="button" name="otherwise" id="choose">Não sei</button>
+    </form>
+
+</div>
+
+<div class="display">
+
+    <div class="logo-box">
+        <img class="text-top" src="../static/assets/pokelogo.png" alt="Pokémon!" , width="300px">
+    </div>
+
+    <div class="pokemon-container">
+        <img id="pokemon" class="pokemon" src="{{ sprite }}" alt="Pokémon!" , width="200px">
+    </div>
+
+    <footer class="footer-box">
+        <p class="text-bottom"> Projeto feito para a disciplina <br>de Projeto e Análise de Algoritmos.<br><br>
+            github.com/EmanuelFirmino/Pokemon_PAA</p>
+    </footer>
+
+</div>
+
+<script type="text/javascript" src="../static/js/change_sprite.js"></script>
 
 {% endblock %}
