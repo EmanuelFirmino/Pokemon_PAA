@@ -2,12 +2,15 @@ from random import randint
 from flask import Flask, render_template, request
 from database import database
 from algoritmo import *
+from json import load
 
 class PAA:
 
    def __init__(self):
 
       self.algoritmo = ALGORITMO()
+      with open('db.json', 'r') as f: self.db = load(f)
+      self.ans = str()
       self.app = Flask(__name__, template_folder='./pages/html', static_folder='./pages/static')
       self.routes()
 
@@ -24,15 +27,10 @@ class PAA:
          if request.method == 'POST':
 
             response = request.get_data().decode()[:-1]
-
-            if    response == 'positive':
-               response = 1
-            elif  response == 'negative':
-               response = -1
-            else:
-               response = 0
-
-            result = self.algoritmo.run(response)
+            
+            self.ans+=str(int(response == 'positive'))
+            result = self.algoritmo.run(self.ans, self.db)
+            if len(self.ans)==5: self.ans=str()
 
             find_it  = result[1]
             question = result[0]
