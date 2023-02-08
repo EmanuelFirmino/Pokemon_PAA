@@ -54,7 +54,7 @@ def createDB():
 
    for pokemon_index in range(1, QNT_POKEMON+1):
 
-      pokemon = getJSON('pokemon/'+ str(pokemon_index))
+      pokemon = getJSON('pokemon/' + str(pokemon_index))
 
       values = [
           pokemon_index,
@@ -70,14 +70,19 @@ def createDB():
           pokemon['stats'][1]['base_stat'],
           pokemon['stats'][2]['base_stat'],
           1 if pokemon['abilities'][0]['is_hidden'] else 0,
-          pokemon['abilities'][1]['ability']['name'] if len(pokemon['abilities']) > 1 else 'none',
-          1 if len(pokemon['abilities']) > 1 and pokemon['abilities'][1]['is_hidden'] else 0,
-          pokemon['game_indices'][0]['version']['name'] if len(pokemon['game_indices']) else 'none',
-          pokemon['game_indices'][1]['version']['name'] if len(pokemon['game_indices']) > 1 else 'none',
+          pokemon['abilities'][1]['ability']['name'] if len(
+              pokemon['abilities']) > 1 else 'none',
+          1 if len(pokemon['abilities']
+                   ) > 1 and pokemon['abilities'][1]['is_hidden'] else 0,
+          pokemon['game_indices'][0]['version']['name'] if len(
+              pokemon['game_indices']) else 'none',
+          pokemon['game_indices'][1]['version']['name'] if len(
+              pokemon['game_indices']) > 1 else 'none',
           1 if pokemon['sprites']['front_female'] else 0,
           1 if pokemon['sprites']['front_shiny'] else 0,
-          pokemon['types'][1]['type']['name'] if len(pokemon['types']) > 1 else 'none',
-          
+          pokemon['types'][1]['type']['name'] if len(
+              pokemon['types']) > 1 else 'none',
+
       ]
 
       cursor.execute(
