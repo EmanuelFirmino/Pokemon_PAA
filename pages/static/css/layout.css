@@ -178,6 +178,9 @@ body {
     text-align: center;
     padding: 20px;
 }
+.footer-box-mobile{
+    display: none;
+}
 
 
 @keyframes mostruary {
@@ -199,7 +202,7 @@ body {
 
     .main-box .question-box {
         width: 70%;
-        height: 300px;
+        height: 50%;
         border: outset 5px #f2dc21;
         border-radius: 25px;
         box-shadow: 2px 5px 7px 2px grey;
@@ -232,7 +235,7 @@ body {
         display: flex;
         flex-direction: column;
         width: 50%;
-        height: 170px;
+        height: 37%;
         position: relative;
 
     }
@@ -240,10 +243,72 @@ body {
     .logo-mobile {
         display: flex;
         flex-direction: row;
-        height: 60px;
+        height: 10%;
     }
 
-    #pokemon {
-        filter: brightness(0%);
+    .pokemon-mobile {
+        filter: brightness(100%);
+    }
+
+    .footer-box-mobile {
+        display: flex;
+        height: 3%;
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+
+        background-color: #f2dc21;
+
+    }
+
+    .text-footer-mobile {
+        font-size: 100%;
+        color: rgb(0, 0, 0);
+
+
+        animation-direction: alternate;
+        animation-duration: 15s linear infinite;
+
+        -moz-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+
+        -moz-animation: showtext 15s linear infinite;
+        -webkit-animation: showtext 15s linear infinite;
+        animation: showtext 15s linear infinite;
+    }
+
+    @-moz-keyframes showtext {
+        from {
+            -moz-transform: translateX(100%);
+        }
+
+        to {
+            -moz-transform: translateX(-100%);
+        }
+    }
+
+    @-webkit-keyframes showtext {
+        from {
+            -webkit-transform: translateX(100%);
+        }
+
+        to {
+            -webkit-transform: translateX(-100%);
+        }
+    }
+
+    @keyframes showtext {
+        from {
+            -moz-transform: translateX(100%);
+            -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+        }
+
+        to {
+            -moz-transform: translateX(-100%);
+            -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+        }
     }
 }
