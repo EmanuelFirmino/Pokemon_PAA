@@ -10,7 +10,8 @@
     margin: 0;
 }
 
-body, html {
+body,
+html {
     box-sizing: border-box;
 }
 
@@ -24,7 +25,7 @@ body {
     height: 7%;
     display: flex;
     padding-left: 1%;
-    background-image: radial-gradient(var(--primary-color),darkred);
+    background-image: radial-gradient(var(--primary-color), darkred);
     align-items: center;
     justify-content: space-between;
 }
@@ -43,6 +44,10 @@ body {
     background-image: url('../assets/fundo.jpg');
     background-size: cover;
     background-position: bottom;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .content-box .display {
@@ -51,15 +56,19 @@ body {
     padding: 10px;
     width: 40%;
     background: linear-gradient(to top, #2986cc, var(--secondary-color), #90cbf7);
-    border-left:groove 30px #ff5a4e;
-    display: grid;  
+    border-left: groove 30px #ff5a4e;
+    display: grid;
 }
 
-.content-box .display .text-top{
+.content-box .display .text-top {
     margin-top: 40px;
     font-family: 'Pokemon Solid', sans-serif;
     font-size: 60px;
     color: white;
+}
+
+.logo-mobile {
+    display: none;
 }
 
 .content-box .display .pokemon-container {
@@ -87,13 +96,13 @@ body {
 }
 
 .main-box .question-buttons {
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
     width: 50%;
+    height: 170px;
     position: relative;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+
 }
 
 .main-box .question-box .letter .question {
@@ -106,10 +115,10 @@ body {
 
 .main-box .question-box .letter {
     position: relative;
-    width:auto;
-    height:auto;
+    width: auto;
+    height: auto;
     padding: 10px;
-    background-color: rgba(255,255,255,0.6);
+    background-color: rgba(255, 255, 255, 0.6);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -122,7 +131,7 @@ body {
     padding: 8px;
     border-radius: 30px;
     border: outset 6px #f2dc21;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background-color: var(--secondary-color);
     font-weight: 600;
     cursor: pointer;
@@ -160,10 +169,6 @@ body {
     width: 70%;
     height: 350px;
     border: outset 5px #f2dc21;
-    position: relative;
-    top: 33%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     border-radius: 25px;
     box-shadow: 2px 5px 7px 2px grey;
     background-image: url('../assets/background-florest.png');
@@ -173,16 +178,137 @@ body {
     text-align: center;
     padding: 20px;
 }
+.footer-box-mobile{
+    display: none;
+}
 
 
 @keyframes mostruary {
     from {
         top: 40px;
-                
+
     }
 
     to {
         margin-top: 44px;
     }
-    
+
+}
+
+@media screen and (max-width: 920px) {
+    .content-box .display {
+        display: none;
+    }
+
+    .main-box .question-box {
+        width: 70%;
+        height: 50%;
+        border: outset 5px #f2dc21;
+        border-radius: 25px;
+        box-shadow: 2px 5px 7px 2px grey;
+        background-image: url('../assets/background-florest.png');
+        background-size: cover;
+        background-position: center;
+        align-content: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .main-box .question-box .letter .question {
+        position: relative;
+        top: 20%;
+        font-family: 'Rampart One';
+        font-size: 3vw;
+        color: blue;
+    }
+
+    .content-box .main-box {
+        height: 100%;
+        width: 100%;
+        background-image: url('../assets/fundo.jpg');
+        background-size: cover;
+        background-position: bottom;
+    }
+
+    .main-box .question-buttons {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        height: 37%;
+        position: relative;
+
+    }
+
+    .logo-mobile {
+        display: flex;
+        flex-direction: row;
+        height: 10%;
+    }
+
+    .pokemon-mobile {
+        filter: brightness(100%);
+    }
+
+    .footer-box-mobile {
+        display: flex;
+        height: 3%;
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+
+        background-color: #f2dc21;
+
+    }
+
+    .text-footer-mobile {
+        font-size: 100%;
+        color: rgb(0, 0, 0);
+
+
+        animation-direction: alternate;
+        animation-duration: 15s linear infinite;
+
+        -moz-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+
+        -moz-animation: showtext 15s linear infinite;
+        -webkit-animation: showtext 15s linear infinite;
+        animation: showtext 15s linear infinite;
+    }
+
+    @-moz-keyframes showtext {
+        from {
+            -moz-transform: translateX(100%);
+        }
+
+        to {
+            -moz-transform: translateX(-100%);
+        }
+    }
+
+    @-webkit-keyframes showtext {
+        from {
+            -webkit-transform: translateX(100%);
+        }
+
+        to {
+            -webkit-transform: translateX(-100%);
+        }
+    }
+
+    @keyframes showtext {
+        from {
+            -moz-transform: translateX(100%);
+            -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+        }
+
+        to {
+            -moz-transform: translateX(-100%);
+            -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+        }
+    }
 }
